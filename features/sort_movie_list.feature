@@ -23,9 +23,16 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
+  Then I should see "Aladdin" before "Amelie"
+  And I should see "The Incredibles" before "The Terminator"
+  And I should not see "Aladdin" before "2001: A Space Odyssey"
+  
   # your steps here
 
 Scenario: sort movies in increasing order of release date
-  When I follow "Release Date"
+  When I follow "Release Date"  
+  Then I should see "1984-10-26" before "1989-07-21"
+  Then I should not see "2004-11-05" before "1989-07-21"
+  
   # your steps here
 
